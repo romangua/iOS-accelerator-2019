@@ -17,6 +17,7 @@
 		14B0ECC321E6D402004B2173 /* MAOInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECC121E6D402004B2173 /* MAOInitialViewController.m */; };
 		14B0ECC721E6D417004B2173 /* MAOListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECC521E6D417004B2173 /* MAOListViewController.m */; };
 		14B0ECC821E6D417004B2173 /* MAOListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14B0ECC621E6D417004B2173 /* MAOListViewController.xib */; };
+		14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		14B0ECC421E6D417004B2173 /* MAOListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOListViewController.h; sourceTree = "<group>"; };
 		14B0ECC521E6D417004B2173 /* MAOListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOListViewController.m; sourceTree = "<group>"; };
 		14B0ECC621E6D417004B2173 /* MAOListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOListViewController.xib; sourceTree = "<group>"; };
+		14B0ECC921E790DD004B2173 /* MAOListViewControllerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MAOListViewControllerModel.h; sourceTree = "<group>"; };
+		14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAOListViewControllerModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				14B0ECC421E6D417004B2173 /* MAOListViewController.h */,
 				14B0ECC521E6D417004B2173 /* MAOListViewController.m */,
 				14B0ECC621E6D417004B2173 /* MAOListViewController.xib */,
+				14B0ECC921E790DD004B2173 /* MAOListViewControllerModel.h */,
+				14B0ECCA21E790DD004B2173 /* MAOListViewControllerModel.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B0EC9221E6D190004B2173 /* main.m in Sources */,
+				14B0ECCB21E790DD004B2173 /* MAOListViewControllerModel.m in Sources */,
 				14B0ECC321E6D402004B2173 /* MAOInitialViewController.m in Sources */,
 				14B0ECC721E6D417004B2173 /* MAOListViewController.m in Sources */,
 				14B0EC8421E6D18C004B2173 /* AppDelegate.m in Sources */,

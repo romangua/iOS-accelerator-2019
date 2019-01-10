@@ -8,6 +8,9 @@
 
 #import "MAOInitialViewController.h"
 
+
+#import "MAOListViewController.h"
+
 @interface MAOInitialViewController ()
 
 @end
@@ -23,16 +26,17 @@
     
     // TODO
     // ACA BUSCAMOS LA DATA DEL SERVER Y AVANZAMOS AL PROXIMO VC CUANDO YA LA TENGAMOS PROCESADA
+    
+    // 1-  Request al server (URL: https://itunes.apple.com/search?term=jack+johnson)
+    // 2 - Parser del response
+    // 3 - Crecion del modelo del VC 2
+    // 4 - Iniciar el vc 2 con el modelo
+    //-------------------------------------------
+    
+    //NTH:
+    // Manejo de errores en el request.
+    // Mostrar mensaje mientras carga.
+    // Mensajes de alerta.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

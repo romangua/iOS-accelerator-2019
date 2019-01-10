@@ -8,25 +8,53 @@
 
 #import "MAOListViewController.h"
 
-@interface MAOListViewController ()
-
+@interface MAOListViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *resultTable;
+@property (nonatomic, strong) NSArray<MAOListViewControllerModel *> *arrayModels;
 @end
 
 @implementation MAOListViewController
 
+
+- (instancetype) initWithModel:( NSArray<MAOListViewControllerModel *> *) arrayModels
+{
+    self = [super init];
+    if(self){
+        _arrayModels = arrayModels;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.resultTable.delegate = self;
+    self.resultTable.dataSource = self;
+    [self.resultTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier   forIndexPath:indexPath] ;
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    cell.textLabel.text= @"Hello";
+    return cell;
 }
-*/
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayModels.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
 
 @end

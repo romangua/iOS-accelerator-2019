@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MAOListViewControllerModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MAOListViewController : UIViewController
+
+- (instancetype) initWithModel:( NSArray<MAOListViewControllerModel *> *) arrayModels;
 
 @end
 
