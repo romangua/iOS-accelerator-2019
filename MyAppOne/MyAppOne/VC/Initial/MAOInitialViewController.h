@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MAOInitialViewController.h
 //  MyAppOne
 //
 //  Created by Julio Castillo on 9/1/19.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface MAOInitialViewController : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
