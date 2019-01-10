@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *collectionPrice;
 @property (nonatomic, strong) NSNumber *trackPrice;
 
+-(id) initFromDictionary:(NSDictionary *)item;
+
 @end
 
 NS_ASSUME_NONNULL_END
