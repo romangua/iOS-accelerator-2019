@@ -10,4 +10,21 @@
 
 @implementation MAOListViewControllerModel
 
+- (id)initFromDictionary:(NSDictionary * )item {
+    if(!(self = [super init])) {
+        return nil;
+    }
+    
+    _artistName = [item valueForKey:@"artistName"];
+    _collectionName = [item valueForKey:@"collectionName"];
+    _trackName = [item valueForKey:@"trackName"];
+    _artistViewUrl = [item valueForKey:@"artistViewUrl"];
+    _collectionViewUrl = [item valueForKey:@"collectionViewUrl"];
+    _trackViewUrl = [item valueForKey:@"trackViewUrl"];
+    _collectionPrice = [item valueForKey:@"collectionPrice"];
+    _trackPrice = [item valueForKey:@"trackPrice"];
+    
+    return self;
+}
+
 @end
