@@ -15,8 +15,13 @@
 @interface MAOInitialViewController ()
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (strong, nonatomic) IBOutlet UIView *okICon;
 @property (nonatomic, strong) NSMutableArray<MAOListViewControllerModel *> *arrayModels;
+@property (weak, nonatomic) IBOutlet UIImageView *resultIcon;
+
+typedef enum {
+    TRACK_ID,
+    RELEASE_DATE
+} OrderType;
 
 @end
 
@@ -40,53 +45,85 @@
         
         if (!error) {
             NSLog(@"Data: %@",dataArray);
-            dataArray = [dataArray valueForKey:@"results"];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.arrayModels = [[NSMutableArray<MAOListViewControllerModel *> alloc] init];
-                for (id itemArray in dataArray) {
-                    MAOListViewControllerModel *item = [[MAOListViewControllerModel alloc] initFromDictionary:itemArray];
-                    [self.arrayModels addObject:item];
-                }
+                [self.resultIcon setImage:[UIImage imageNamed:@"okIcon"]];
             });
+            dataArray = [dataArray valueForKey:@"results"];
+            self.arrayModels = [[NSMutableArray<MAOListViewControllerModel *> alloc] init];
+            for (id itemArray in dataArray) {
+                MAOListViewControllerModel *item = [[MAOListViewControllerModel alloc] initFromDictionary:itemArray];
+                [self.arrayModels addObject:item];
+            }
         }
         else
         {
             NSLog(@"Error request %@", error);
-            UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Atención"
-                                                                           message:[error localizedDescription]
-                                                                    preferredStyle:UIAlertControllerStyleAlert];
+            [self showDialogWithTitle:@"Atención" withMessage:[error localizedDescription]];
             
-            UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * action) {}];
-            
-            [alert addAction:defaultAction];
-            [self presentViewController:alert animated:YES completion:nil];
         }
     } fromURL:url];
 }
 
-- (IBAction)btnShowASC:(UIButton *)sender {
-    [self goToListShowDesc:FALSE];
+- (IBAction)btnShowByReleaseTrackAsc:(UIButton *)sender {
+    [self goToListShowDesc:FALSE orderByType:RELEASE_DATE];
 }
 
-- (IBAction)btnShowDESC:(UIButton *)sender {
-    [self goToListShowDesc:TRUE];
+- (IBAction)btnShowByReleaseTrackDesc:(UIButton *)sender {
+    [self goToListShowDesc:TRUE orderByType:RELEASE_DATE];
 }
 
--(void) goToListShowDesc:(BOOL) showDesc {
-    NSArray *sortedArray = [_arrayModels sortedArrayUsingComparator: ^(MAOListViewControllerModel* obj1, MAOListViewControllerModel* obj2) {
-        NSNumber *obj1TrackId = [obj1 trackId];
-        NSNumber *obj2TrackId = [obj2 trackId];
+- (IBAction)btnShowByTrackIdAsc:(UIButton *)sender {
+    [self goToListShowDesc:FALSE orderByType:TRACK_ID];
+}
+
+- (IBAction)btnOrderByTrackIdDesc:(UIButton *)sender {
+    [self goToListShowDesc:TRUE orderByType:TRACK_ID];
+}
+
+-(void) goToListShowDesc:(BOOL) showDesc orderByType:(int) type {
+    if(_arrayModels != nil || [_arrayModels count] != 0) {
+        NSArray *sortedArray = [_arrayModels sortedArrayUsingComparator: ^(MAOListViewControllerModel* obj1, MAOListViewControllerModel* obj2) {
+            
+            if(type == TRACK_ID) {
+                NSNumber *obj1TrackId = [obj1 trackId];
+                NSNumber *obj2TrackId = [obj2 trackId];
+                
+                if(showDesc) {
+                    return [obj2TrackId compare:obj1TrackId];
+                } else {
+                    return [obj1TrackId compare:obj2TrackId];
+                }
+            } else if(type == RELEASE_DATE) {
+                NSDate *obj1ReleaseDate = [obj1 releaseDate];
+                NSDate *obj2ReleaseDate = [obj2 releaseDate];
+                
+                if(showDesc) {
+                    return [obj2ReleaseDate compare:obj1ReleaseDate];
+                } else {
+                    return [obj1ReleaseDate compare:obj2ReleaseDate];
+                }
+            }
+            return NSOrderedSame;
+        }];
         
-        if(showDesc) {
-            return [obj2TrackId compare:obj1TrackId];
-        } else {
-            return [obj1TrackId compare:obj2TrackId];
-        }
-    }];
+        MAOListViewController *listView = [[MAOListViewController alloc] initWithModel:sortedArray];
+        [self.navigationController pushViewController:listView animated:YES];
+    } else {
+        [self.resultIcon setImage:[UIImage imageNamed:@"errorIcon"]];
+        [self showDialogWithTitle:@"Atención" withMessage:@"Primero debes cargar los datos"];
+    }
+}
+
+-(void) showDialogWithTitle:(NSString *)title withMessage:(NSString *)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    MAOListViewController *listView = [[MAOListViewController alloc] initWithModel:sortedArray];
-    [self.navigationController pushViewController:listView animated:YES];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
