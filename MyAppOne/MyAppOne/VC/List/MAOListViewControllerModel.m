@@ -15,6 +15,7 @@
         return nil;
     }
     
+    _trackId = [item valueForKey:@"trackId"];
     _artistName = [item valueForKey:@"artistName"];
     _collectionName = [item valueForKey:@"collectionName"];
     _trackName = [item valueForKey:@"trackName"];
@@ -23,6 +24,7 @@
     _trackViewUrl = [item valueForKey:@"trackViewUrl"];
     _collectionPrice = [item valueForKey:@"collectionPrice"];
     _trackPrice = [item valueForKey:@"trackPrice"];
+    _releaseDate = [item valueForKey:@"releaseDate"];
     
     return self;
 }
