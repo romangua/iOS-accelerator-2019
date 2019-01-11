@@ -24,7 +24,11 @@
     _trackViewUrl = [item valueForKey:@"trackViewUrl"];
     _collectionPrice = [item valueForKey:@"collectionPrice"];
     _trackPrice = [item valueForKey:@"trackPrice"];
-    _releaseDate = [item valueForKey:@"releaseDate"];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00Z"];
+    NSDate *theDate = [dateFormatter dateFromString:[item valueForKey:@"releaseDate"]];
+    _releaseDate = theDate;
     
     return self;
 }
