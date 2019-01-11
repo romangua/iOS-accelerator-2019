@@ -15,6 +15,8 @@
 @interface MAOInitialViewController ()
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (strong, nonatomic) IBOutlet UIView *okICon;
+@property (nonatomic, strong) NSMutableArray<MAOListViewControllerModel *> *arrayModels;
 
 @end
 
@@ -40,13 +42,11 @@
             NSLog(@"Data: %@",dataArray);
             dataArray = [dataArray valueForKey:@"results"];
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSMutableArray<MAOListViewControllerModel*> *modelArray = [[NSMutableArray<MAOListViewControllerModel *> alloc] init];
+                self.arrayModels = [[NSMutableArray<MAOListViewControllerModel *> alloc] init];
                 for (id itemArray in dataArray) {
                     MAOListViewControllerModel *item = [[MAOListViewControllerModel alloc] initFromDictionary:itemArray];
-                    [modelArray addObject:item];
+                    [self.arrayModels addObject:item];
                 }
-                MAOListViewController *listView = [[MAOListViewController alloc] initWithModel:modelArray];
-                [self.navigationController pushViewController:listView animated:YES];
             });
         }
         else
@@ -63,6 +63,30 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
     } fromURL:url];
+}
+
+- (IBAction)btnShowASC:(UIButton *)sender {
+    [self goToListShowDesc:FALSE];
+}
+
+- (IBAction)btnShowDESC:(UIButton *)sender {
+    [self goToListShowDesc:TRUE];
+}
+
+-(void) goToListShowDesc:(BOOL) showDesc {
+    NSArray *sortedArray = [_arrayModels sortedArrayUsingComparator: ^(MAOListViewControllerModel* obj1, MAOListViewControllerModel* obj2) {
+        NSNumber *obj1TrackId = [obj1 trackId];
+        NSNumber *obj2TrackId = [obj2 trackId];
+        
+        if(showDesc) {
+            return [obj2TrackId compare:obj1TrackId];
+        } else {
+            return [obj1TrackId compare:obj2TrackId];
+        }
+    }];
+    
+    MAOListViewController *listView = [[MAOListViewController alloc] initWithModel:sortedArray];
+    [self.navigationController pushViewController:listView animated:YES];
 }
 
 @end

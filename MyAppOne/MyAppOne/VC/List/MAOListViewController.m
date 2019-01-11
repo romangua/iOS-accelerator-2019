@@ -44,7 +44,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text= [[_arrayModels objectAtIndex:[indexPath row]] valueForKey:@"trackName"];
+    cell.textLabel.text= [NSString stringWithFormat:@"%@ - %@",[[_arrayModels objectAtIndex:[indexPath row]] valueForKey:@"trackId"], [[_arrayModels objectAtIndex:[indexPath row]] valueForKey:@"trackName"]];
     return cell;
 }
 
