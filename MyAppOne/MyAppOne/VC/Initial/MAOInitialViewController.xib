@@ -28,13 +28,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dI-Pf-D0G">
-                    <rect key="frame" x="143" y="268" width="89" height="30"/>
-                    <state key="normal" title="Cargar datos"/>
-                    <connections>
-                        <action selector="onClickSelection:" destination="-1" eventType="touchUpInside" id="aF8-lI-fE7"/>
-                    </connections>
-                </button>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="veg-bN-XOa">
                     <rect key="frame" x="177" y="306" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,6 +82,13 @@
                     <rect key="frame" x="170" y="346" width="34" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dI-Pf-D0G">
+                    <rect key="frame" x="143" y="268" width="89" height="30"/>
+                    <state key="normal" title="Cargar datos"/>
+                    <connections>
+                        <action selector="onClickSelection:" destination="-1" eventType="touchUpInside" id="aF8-lI-fE7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
