@@ -18,6 +18,7 @@
     _trackId = [item valueForKey:@"trackId"];
     _artistName = [item valueForKey:@"artistName"];
     _collectionName = [item valueForKey:@"collectionName"];
+    _artworkUrl100 = [item valueForKey:@"artworkUrl100"];
     _trackName = [item valueForKey:@"trackName"];
     _artistViewUrl = [item valueForKey:@"artistViewUrl"];
     _collectionViewUrl = [item valueForKey:@"collectionViewUrl"];

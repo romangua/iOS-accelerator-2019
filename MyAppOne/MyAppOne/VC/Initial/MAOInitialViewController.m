@@ -9,8 +9,8 @@
 #import "MAOInitialViewController.h"
 #import "MAOListViewController.h"
 #import "../../Services/MARequestService.h"
-#import "../List/MAOListViewController.h"
-#import "../List/MAOListViewControllerModel.h"
+#import "../ListCustom/MAOListCustomViewController.h"
+#import "../../Model/MAOListViewControllerModel.h"
 
 @interface MAOInitialViewController ()
 
@@ -30,6 +30,11 @@ typedef enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.activityIndicator setHidden:TRUE];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (IBAction)onClickSelection:(id)sender {
@@ -106,7 +111,7 @@ typedef enum {
             return NSOrderedSame;
         }];
         
-        MAOListViewController *listView = [[MAOListViewController alloc] initWithModel:sortedArray];
+        MAOListCustomViewController *listView = [[MAOListCustomViewController alloc] initWithModel:sortedArray];
         [self.navigationController pushViewController:listView animated:YES];
     } else {
         [self.resultIcon setImage:[UIImage imageNamed:@"errorIcon"]];

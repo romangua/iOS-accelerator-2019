@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *artistViewUrl;
 @property (nonatomic, copy) NSString *collectionViewUrl;
+@property (nonatomic, copy) NSString *artworkUrl100;
 @property (nonatomic, copy) NSString *trackViewUrl;
 
 @property (nonatomic, strong) NSNumber *collectionPrice;
