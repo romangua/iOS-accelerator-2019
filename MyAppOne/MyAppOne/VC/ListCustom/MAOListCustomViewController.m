@@ -81,7 +81,7 @@
     
     MAODetailViewController *detail = [[MAODetailViewController alloc] initWithModel:model];
     
-    [detail setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    [detail setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:detail animated:YES completion:nil];
 }
 

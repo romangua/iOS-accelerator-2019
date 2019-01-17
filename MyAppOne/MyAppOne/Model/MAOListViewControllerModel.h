@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface MAOListViewControllerModel : NSObject
 
 @property (nonatomic, copy) NSNumber *trackId;
@@ -26,8 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *trackPrice;
 @property (nonatomic, strong) NSDate *releaseDate;
 
--(id) initFromDictionary:(NSDictionary *)item;
+-(instancetype) initFromDictionary:(NSDictionary *)dictionary;
 
 @end
 
-NS_ASSUME_NONNULL_END

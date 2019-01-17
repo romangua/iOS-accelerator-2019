@@ -10,27 +10,25 @@
 
 @implementation MAOListViewControllerModel
 
-- (id)initFromDictionary:(NSDictionary * )item {
-    if(!(self = [super init])) {
-        return nil;
+- (instancetype)initFromDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if(self) {
+        _trackId = [dictionary valueForKey:@"trackId"];
+        _artistName = [dictionary valueForKey:@"artistName"];
+        _collectionName = [dictionary valueForKey:@"collectionName"];
+        _artworkUrl100 = [dictionary valueForKey:@"artworkUrl100"];
+        _trackName = [dictionary valueForKey:@"trackName"];
+        _artistViewUrl = [dictionary valueForKey:@"artistViewUrl"];
+        _collectionViewUrl = [dictionary valueForKey:@"collectionViewUrl"];
+        _trackViewUrl = [dictionary valueForKey:@"trackViewUrl"];
+        _collectionPrice = [dictionary valueForKey:@"collectionPrice"];
+        _trackPrice = [dictionary valueForKey:@"trackPrice"];
+        
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00Z"];
+        NSDate *theDate = [dateFormatter dateFromString:[dictionary valueForKey:@"releaseDate"]];
+        _releaseDate = theDate;
     }
-    
-    _trackId = [item valueForKey:@"trackId"];
-    _artistName = [item valueForKey:@"artistName"];
-    _collectionName = [item valueForKey:@"collectionName"];
-    _artworkUrl100 = [item valueForKey:@"artworkUrl100"];
-    _trackName = [item valueForKey:@"trackName"];
-    _artistViewUrl = [item valueForKey:@"artistViewUrl"];
-    _collectionViewUrl = [item valueForKey:@"collectionViewUrl"];
-    _trackViewUrl = [item valueForKey:@"trackViewUrl"];
-    _collectionPrice = [item valueForKey:@"collectionPrice"];
-    _trackPrice = [item valueForKey:@"trackPrice"];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00Z"];
-    NSDate *theDate = [dateFormatter dateFromString:[item valueForKey:@"releaseDate"]];
-    _releaseDate = theDate;
-    
     return self;
 }
 

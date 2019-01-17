@@ -14,9 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblAlbumName;
 @property (weak, nonatomic) IBOutlet UILabel *lblAutorName;
 @property (weak, nonatomic) IBOutlet UILabel *lblPriceTrack;
-@property (weak, nonatomic) IBOutlet UIButton *btnBuy;
 @property (weak, nonatomic) IBOutlet UIImageView *imgAlbum;
-@property (weak, nonatomic) IBOutlet UIButton *btnDismiss;
 
 - (instancetype) initWithModel:(MAOListViewControllerModel *) model;
 
