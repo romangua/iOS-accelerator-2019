@@ -23,6 +23,7 @@
         _trackViewUrl = [dictionary valueForKey:@"trackViewUrl"];
         _collectionPrice = [dictionary valueForKey:@"collectionPrice"];
         _trackPrice = [dictionary valueForKey:@"trackPrice"];
+        _previewUrl = [dictionary valueForKey:@"previewUrl"];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00Z"];

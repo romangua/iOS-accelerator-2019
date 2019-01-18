@@ -21,6 +21,9 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS6-TW-ePK">
                         <rect key="frame" x="108" y="40" width="104" height="67.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="67.5" id="7z2-20-MMa"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del álbum" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-hu-fco">
                         <rect key="frame" x="16" y="119.5" width="288" height="17"/>

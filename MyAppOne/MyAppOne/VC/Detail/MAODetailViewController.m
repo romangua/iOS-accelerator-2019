@@ -60,7 +60,7 @@
 
 - (IBAction)btnBuy:(UIButton *)sender {
     [[UIApplication sharedApplication]
-       openURL:[NSURL URLWithString:@"https://audio-ssl.itunes.apple.com/apple-assets-us-std-000001/Music/v4/38/c0/19/38c0196e-3ce0-92c1-6b2d-eb10e3eb0ee5/mzaf_7178478946435499403.plus.aac.p.m4a"] options:@{} completionHandler:nil];
+       openURL:[NSURL URLWithString:_model.previewUrl] options:@{} completionHandler:nil];
 }
 
 @end

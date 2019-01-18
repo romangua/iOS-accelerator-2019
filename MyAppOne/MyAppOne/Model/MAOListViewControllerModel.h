@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSNumber *collectionPrice;
 @property (nonatomic, copy) NSNumber *trackPrice;
 @property (nonatomic, copy) NSDate *releaseDate;
+@property (nonatomic, copy) NSString *previewUrl;
 
 -(instancetype) initFromDictionary:(NSDictionary *)dictionary;
 
