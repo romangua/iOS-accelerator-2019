@@ -8,19 +8,41 @@
 
 #import "MAOCustomTableViewCell.h"
 
-@implementation MAOCustomTableViewCell
+@interface MAOCustomTableViewCell()
+@property (weak, nonatomic) IBOutlet UILabel *lblTrackName;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAlbum;
+@property (weak, nonatomic) IBOutlet UILabel *lblAlbumName;
+@end
 
-@synthesize lblAlbumName, lblTrackName, imgAlbum;
+@implementation MAOCustomTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+-(void)setModel:(MAOListViewControllerModel *)model {
+    [self clearItems];
+    
+    _lblTrackName.text = [model trackName];
+    _lblAlbumName.text = [model collectionName];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[model artworkUrl100]]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imgAlbum.image = [UIImage imageWithData:data];
+        });
+    });
+}
+
+-(void) clearItems {
+    _lblTrackName.text = nil;
+    _lblAlbumName.text = nil;
+    _imgAlbum.image = nil;
 }
 
 @end

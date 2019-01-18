@@ -24,6 +24,7 @@
 		B371574221F0EB220077FBD6 /* MAOCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B371574021F0EB220077FBD6 /* MAOCustomTableViewCell.xib */; };
 		B371574721F104920077FBD6 /* MAODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B371574521F104920077FBD6 /* MAODetailViewController.m */; };
 		B371574821F104920077FBD6 /* MAODetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B371574621F104920077FBD6 /* MAODetailViewController.xib */; };
+		B371574A21F20DAF0077FBD6 /* MAODetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B371574521F104920077FBD6 /* MAODetailViewController.m */; };
 		B397945F21E7AB730002ECEF /* MARequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = B397945E21E7AB730002ECEF /* MARequestService.m */; };
 /* End PBXBuildFile section */
 
@@ -381,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B0EC9C21E6D191004B2173 /* MyAppOneTests.m in Sources */,
+				B371574A21F20DAF0077FBD6 /* MAODetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,11 +10,6 @@
 #import "../../Model/MAOListViewControllerModel.h"
 
 @interface MAODetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *lblTrackName;
-@property (weak, nonatomic) IBOutlet UILabel *lblAlbumName;
-@property (weak, nonatomic) IBOutlet UILabel *lblAutorName;
-@property (weak, nonatomic) IBOutlet UILabel *lblPriceTrack;
-@property (weak, nonatomic) IBOutlet UIImageView *imgAlbum;
 
 - (instancetype) initWithModel:(MAOListViewControllerModel *) model;
 

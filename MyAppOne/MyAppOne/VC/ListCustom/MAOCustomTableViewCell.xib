@@ -20,13 +20,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eS6-TW-ePK">
-                        <rect key="frame" x="109" y="40" width="103" height="67"/>
+                        <rect key="frame" x="108" y="40" width="104" height="67.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre del álbum" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzp-hu-fco">
-                        <rect key="frame" x="16" y="115" width="288" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="ShQ-lg-lj8"/>
-                        </constraints>
+                        <rect key="frame" x="16" y="119.5" width="288" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,23 +36,23 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="a2U-88-CJL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="AqC-oC-7bW"/>
-                    <constraint firstItem="Wzp-hu-fco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ISC-HL-6cH"/>
-                    <constraint firstAttribute="trailing" secondItem="Wzp-hu-fco" secondAttribute="trailing" constant="16" id="Vle-lH-0jL"/>
-                    <constraint firstItem="eS6-TW-ePK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="109" id="Zze-bJ-pw6"/>
-                    <constraint firstItem="eS6-TW-ePK" firstAttribute="top" secondItem="a2U-88-CJL" secondAttribute="bottom" constant="12" id="fKx-2D-Caz"/>
-                    <constraint firstItem="a2U-88-CJL" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fXg-TY-Wsg"/>
-                    <constraint firstItem="Wzp-hu-fco" firstAttribute="top" secondItem="eS6-TW-ePK" secondAttribute="bottom" constant="8" id="gAc-0g-F5Z"/>
-                    <constraint firstAttribute="trailing" secondItem="eS6-TW-ePK" secondAttribute="trailing" constant="108" id="mkn-Ix-FJR"/>
-                    <constraint firstAttribute="bottom" secondItem="Wzp-hu-fco" secondAttribute="bottom" constant="8.5" id="voF-WS-03g"/>
-                    <constraint firstItem="a2U-88-CJL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xMe-DW-Eyw"/>
+                    <constraint firstItem="Wzp-hu-fco" firstAttribute="top" secondItem="eS6-TW-ePK" secondAttribute="bottom" constant="12" id="1H8-VE-zuL"/>
+                    <constraint firstItem="a2U-88-CJL" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="60j-Js-WfB"/>
+                    <constraint firstItem="eS6-TW-ePK" firstAttribute="top" secondItem="a2U-88-CJL" secondAttribute="bottom" constant="12" id="8t8-H6-20C"/>
+                    <constraint firstAttribute="bottom" secondItem="Wzp-hu-fco" secondAttribute="bottom" constant="8" id="FYR-5Y-hE7"/>
+                    <constraint firstItem="eS6-TW-ePK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="92" id="NK0-Sl-d3o"/>
+                    <constraint firstItem="eS6-TW-ePK" firstAttribute="top" secondItem="a2U-88-CJL" secondAttribute="bottom" constant="12" id="RyN-Vq-n6l"/>
+                    <constraint firstItem="a2U-88-CJL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="kxe-Lq-qiq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eS6-TW-ePK" secondAttribute="trailing" constant="92" id="laG-zf-WvK"/>
+                    <constraint firstItem="a2U-88-CJL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="o7c-T8-6Qb"/>
+                    <constraint firstItem="Wzp-hu-fco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="wX8-Fr-KHP"/>
+                    <constraint firstAttribute="trailing" secondItem="Wzp-hu-fco" secondAttribute="trailing" constant="16" id="zSi-hE-awv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="imgAlbum" destination="eS6-TW-ePK" id="M6W-sg-tVj"/>
-                <outlet property="lblAlbumName" destination="Wzp-hu-fco" id="Y7r-zG-5nh"/>
-                <outlet property="lblTrackName" destination="a2U-88-CJL" id="6Ge-Ul-GmF"/>
+                <outlet property="imgAlbum" destination="eS6-TW-ePK" id="TLR-Qu-8z4"/>
+                <outlet property="lblAlbumName" destination="Wzp-hu-fco" id="pZg-Dy-80u"/>
             </connections>
             <point key="canvasLocation" x="137.59999999999999" y="186.65667166416793"/>
         </tableViewCell>

@@ -23,8 +23,7 @@
     self.resultTable.dataSource = self;
 }
 
-- (instancetype) initWithModel:( NSArray<MAOListViewControllerModel *> *) arrayModels
-{
+- (instancetype) initWithModel:( NSArray<MAOListViewControllerModel *> *) arrayModels {
     self = [super init];
     if(self){
         _arrayModels = arrayModels;
@@ -38,27 +37,15 @@
     [self setTitle:@"Track List"];
 }
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
-{
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     static NSString *cellID = @"CellID";
     MAOCustomTableViewCell *cell = (MAOCustomTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MAOCustomTableViewCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.lblTrackName.text = [[self.arrayModels objectAtIndex:[indexPath row]] valueForKey:@"trackName"];
-    cell.lblAlbumName.text = [[self.arrayModels objectAtIndex:[indexPath row]] valueForKey:@"collectionName"];
-    
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(queue, ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[[self.arrayModels objectAtIndex:[indexPath row]]valueForKey:@"artworkUrl100"]]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imgAlbum.image = [UIImage imageWithData:data];
-        });
-    });
-    
+    [cell setModel:[_arrayModels objectAtIndex:[indexPath row]]];
     return cell;
 }
 
@@ -70,18 +57,11 @@
     return 145;
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"Se presiono %ld", (long)indexPath.row);
+    MAODetailViewController *detail = [[MAODetailViewController alloc] initWithModel:[self.arrayModels objectAtIndex:[indexPath row]]];
+    [detail setModalPresentationStyle:UIModalPresentationOverFullScreen];
+    [detail setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
     
-    MAOListViewControllerModel *model = [self.arrayModels objectAtIndex:[indexPath row]];
-    
-    MAODetailViewController *detail = [[MAODetailViewController alloc] initWithModel:model];
-    
-    [detail setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self presentViewController:detail animated:YES completion:nil];
 }
 

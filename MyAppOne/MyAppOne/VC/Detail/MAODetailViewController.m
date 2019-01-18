@@ -10,6 +10,12 @@
 #import "../../Model/MAOListViewControllerModel.h"
 
 @interface MAODetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lblTrackName;
+@property (weak, nonatomic) IBOutlet UILabel *lblAlbumName;
+@property (weak, nonatomic) IBOutlet UILabel *lblAutorName;
+@property (weak, nonatomic) IBOutlet UIImageView *imgAlbum;
+@property (weak, nonatomic) IBOutlet UILabel *lblPriceTrack;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (nonatomic, strong) MAOListViewControllerModel *model;
 @end
 
@@ -23,8 +29,29 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidLoad {
+    self.view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.80];
+    _contentView.layer.cornerRadius = 10;
+    
+    _lblTrackName.text = _model.trackName;
+    _lblAlbumName.text = _model.collectionName;
+    _lblAutorName.text = _model.artistName;
+    _lblPriceTrack.text = [NSString stringWithFormat:@"$ %@", _model.trackPrice];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(queue, ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.model.artworkUrl100]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.imgAlbum.image = [UIImage imageWithData:data];
+        });
+    });
+    
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if(touches.anyObject.view != self.contentView) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (IBAction)btnClose:(UIButton *)sender {
@@ -32,6 +59,8 @@
 }
 
 - (IBAction)btnBuy:(UIButton *)sender {
+    [[UIApplication sharedApplication]
+       openURL:[NSURL URLWithString:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=409954448"] options:@{} completionHandler:nil];
 }
 
 @end

@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../../Model/MAOListViewControllerModel.h"
 
 @interface MAOCustomTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *lblTrackName;
-@property (weak, nonatomic) IBOutlet UIImageView *imgAlbum;
-@property (weak, nonatomic) IBOutlet UILabel *lblAlbumName;
+-(void) setModel:(MAOListViewControllerModel *) model;
 
 @end
 
