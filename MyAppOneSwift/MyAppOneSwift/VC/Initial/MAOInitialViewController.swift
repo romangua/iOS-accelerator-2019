@@ -28,19 +28,31 @@ class MAOInitialViewController: UIViewController {
         super.viewDidLoad()
         self.activityIndicator.hidesWhenStopped = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 
     @IBAction func onClickSelection(_ sender: UIButton) {
-        
         self.activityIndicator.startAnimating()
         MARequestService.fetchData(url: "https://itunes.apple.com/search?term=jack+johnson", success: {(data) in
             self.activityIndicator.stopAnimating()
             if let data = try? JSONDecoder().decode(Result.self, from: data!) {
+                self.resultIcon.image = UIImage.init(named: "okIcon")
                 self.arrayModels = data.results
             } else {
                 self.showDialog(title: "Error", message: "Se produjo un error al procesar los datos")
+                self.resultIcon.image = UIImage.init(named: "errorIcon")
             }
         }) {(error) in
             self.activityIndicator.stopAnimating()
+            self.resultIcon.image = UIImage.init(named: "errorIcon")
             print("Error al obtener los datos: \(error.localizedDescription)")
             self.showDialog(title: "Error", message: "Se produjo un error al obtener los datos")
         }
@@ -65,10 +77,26 @@ class MAOInitialViewController: UIViewController {
     
     func goToList(showDesc: Bool, orderByType: OrderType) {
         if(arrayModels.count != 0) {
+            let sortedArray = arrayModels.sorted { (obj1, obj2) -> Bool in
+                if(OrderType.TRACK_ID == orderByType) {
+                    if(showDesc) {
+                        return obj1.trackId! > obj2.trackId!
+                    } else {
+                        return obj1.trackId! < obj2.trackId!
+                    }
+                } else {
+                    if(showDesc) {
+                        return obj1.releaseDate! > obj2.releaseDate!
+                    } else {
+                        return obj1.releaseDate! < obj2.releaseDate!
+                    }
+                }
+            }
+            
             let nav = UINavigationController(rootViewController: self)
             UIApplication.shared.keyWindow?.rootViewController = nav
             let vc = MAOListViewController()
-            vc.arrayModels = arrayModels
+            vc.arrayModels = sortedArray
             nav.pushViewController(vc, animated: true)
         } else {
             showDialog(title: "Atención", message: "Primero debes cargar los datos")

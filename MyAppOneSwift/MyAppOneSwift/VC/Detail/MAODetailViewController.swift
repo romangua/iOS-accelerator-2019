@@ -43,6 +43,7 @@ class MAODetailViewController: UIViewController {
     }
     
     @IBAction func btnBuy(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: (model?.previewUrl)!)!, options: [:]) { (Bool) in }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
