@@ -12,10 +12,9 @@ class MARequestService {
     
     static func fetchData(url: String, success: @escaping (Data?) -> (), fail: @escaping (Error) -> ()) {
         let defaultSession = URLSession(configuration: .default)
-        var dataTask: URLSessionDataTask?
+        var dataTask: URLSessionDataTask
         if let urlComponents = URLComponents(string: url) {
             guard let url = urlComponents.url else { return }
-            // 4
             dataTask = defaultSession.dataTask(with: url) { data, response, error in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -25,7 +24,7 @@ class MARequestService {
                     }
                 }
             }
-            dataTask?.resume()
+            dataTask.resume()
         }
     }
 }

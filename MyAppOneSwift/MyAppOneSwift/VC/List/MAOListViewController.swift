@@ -11,14 +11,24 @@ import UIKit
 class MAOListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var resultTable: UITableView!
-    var arrayModels: Array<MAOListViewControllerModel> = []
-    let cellReuseIdentifier = "cellId"
+    private var arrayModels: Array<MAOListViewControllerModel> = []
+    private let cellReuseIdentifier = "cellId"
+    
+    init(arrayModel: [MAOListViewControllerModel]){
+        arrayModels = arrayModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         resultTable.register(UINib(nibName: "MAOListTableViewCell", bundle: nil), forCellReuseIdentifier: cellReuseIdentifier)
         resultTable.delegate = self
         resultTable.dataSource = self
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -28,20 +38,9 @@ class MAOListViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MAOListTableViewCell = self.resultTable.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! MAOListTableViewCell
     
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none
         let data = arrayModels[indexPath.row]
-        
-        cell.lblTrackName?.text = data.trackName!
-        cell.lblAlbumName?.text = data.collectionName!
-        
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: URL.init(string: data.artworkUrl100!)!) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        cell.imgAlbum.image = image
-                    }
-                }
-            }
-        }
+        cell.setModel(model: data)
         return cell;
     }
     
@@ -50,8 +49,7 @@ class MAOListViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailViewController = MAODetailViewController()
-        detailViewController.model = arrayModels[indexPath.row]
+        let detailViewController = MAODetailViewController.init(model: arrayModels[indexPath.row])
         detailViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         detailViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(detailViewController, animated: true, completion: nil)

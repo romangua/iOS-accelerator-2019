@@ -95,10 +95,10 @@ class MAOInitialViewController: UIViewController {
             
             let nav = UINavigationController(rootViewController: self)
             UIApplication.shared.keyWindow?.rootViewController = nav
-            let vc = MAOListViewController()
-            vc.arrayModels = sortedArray
+            let vc = MAOListViewController.init(arrayModel: sortedArray)
             nav.pushViewController(vc, animated: true)
         } else {
+            self.resultIcon.image = UIImage.init(named: "errorIcon")
             showDialog(title: "Atención", message: "Primero debes cargar los datos")
         }
     }
