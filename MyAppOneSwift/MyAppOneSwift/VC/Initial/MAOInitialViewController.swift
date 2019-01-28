@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MAODetailViewController: UIViewController {
+class MAOInitialViewController: UIViewController {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var resultIcon: UIImageView!

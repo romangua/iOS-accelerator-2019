@@ -50,11 +50,10 @@ class MAOListViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let nav = UINavigationController(rootViewController: self)
-        UIApplication.shared.keyWindow?.rootViewController = nav
-        let vc = TravelDetailViewController()
-        vc.place = places[indexPath.row]
-        nav.pushViewController(vc, animated: true)*/
+        let detailViewController = MAODetailViewController()
+        detailViewController.model = arrayModels[indexPath.row]
+        detailViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        detailViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(detailViewController, animated: true, completion: nil)
     }
-
 }

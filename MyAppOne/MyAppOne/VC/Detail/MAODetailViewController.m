@@ -30,7 +30,7 @@
 }
 
 - (void)viewDidLoad {
-    self.view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.80];
+    a
     _contentView.layer.cornerRadius = 10;
     
     _lblTrackName.text = _model.trackName;

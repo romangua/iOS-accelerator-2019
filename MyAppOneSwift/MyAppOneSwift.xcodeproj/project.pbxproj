@@ -14,13 +14,15 @@
 		B3C9B83021FB507600C2FBD9 /* MyAppOneSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B82F21FB507600C2FBD9 /* MyAppOneSwiftTests.swift */; };
 		B3C9B83B21FB507600C2FBD9 /* MyAppOneSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B83A21FB507600C2FBD9 /* MyAppOneSwiftUITests.swift */; };
 		B3C9B84A21FB5A3000C2FBD9 /* MAOListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B84921FB5A3000C2FBD9 /* MAOListViewControllerModel.swift */; };
-		B3C9B85121FB5F0000C2FBD9 /* MAODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B84F21FB5F0000C2FBD9 /* MAODetailViewController.swift */; };
-		B3C9B85221FB5F0000C2FBD9 /* MAODetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9B85021FB5F0000C2FBD9 /* MAODetailViewController.xib */; };
+		B3C9B85121FB5F0000C2FBD9 /* MAOInitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B84F21FB5F0000C2FBD9 /* MAOInitialViewController.swift */; };
+		B3C9B85221FB5F0000C2FBD9 /* MAOInitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9B85021FB5F0000C2FBD9 /* MAOInitialViewController.xib */; };
 		B3C9B85521FB799600C2FBD9 /* MARequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B85421FB799600C2FBD9 /* MARequestService.swift */; };
 		B3C9B86C21FB8CF000C2FBD9 /* MAOListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B86A21FB8CF000C2FBD9 /* MAOListViewController.swift */; };
 		B3C9B86D21FB8CF000C2FBD9 /* MAOListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9B86B21FB8CF000C2FBD9 /* MAOListViewController.xib */; };
 		B3C9B87021FB8F3000C2FBD9 /* MAOListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B86E21FB8F3000C2FBD9 /* MAOListTableViewCell.swift */; };
 		B3C9B87121FB8F3000C2FBD9 /* MAOListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9B86F21FB8F3000C2FBD9 /* MAOListTableViewCell.xib */; };
+		B3C9B87A21FF340800C2FBD9 /* MAODetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C9B87821FF340800C2FBD9 /* MAODetailViewController.swift */; };
+		B3C9B87B21FF340800C2FBD9 /* MAODetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C9B87921FF340800C2FBD9 /* MAODetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +56,15 @@
 		B3C9B83A21FB507600C2FBD9 /* MyAppOneSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppOneSwiftUITests.swift; sourceTree = "<group>"; };
 		B3C9B83C21FB507600C2FBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C9B84921FB5A3000C2FBD9 /* MAOListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOListViewControllerModel.swift; sourceTree = "<group>"; };
-		B3C9B84F21FB5F0000C2FBD9 /* MAODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAODetailViewController.swift; sourceTree = "<group>"; };
-		B3C9B85021FB5F0000C2FBD9 /* MAODetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAODetailViewController.xib; sourceTree = "<group>"; };
+		B3C9B84F21FB5F0000C2FBD9 /* MAOInitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOInitialViewController.swift; sourceTree = "<group>"; };
+		B3C9B85021FB5F0000C2FBD9 /* MAOInitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOInitialViewController.xib; sourceTree = "<group>"; };
 		B3C9B85421FB799600C2FBD9 /* MARequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MARequestService.swift; sourceTree = "<group>"; };
 		B3C9B86A21FB8CF000C2FBD9 /* MAOListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOListViewController.swift; sourceTree = "<group>"; };
 		B3C9B86B21FB8CF000C2FBD9 /* MAOListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOListViewController.xib; sourceTree = "<group>"; };
 		B3C9B86E21FB8F3000C2FBD9 /* MAOListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAOListTableViewCell.swift; sourceTree = "<group>"; };
 		B3C9B86F21FB8F3000C2FBD9 /* MAOListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAOListTableViewCell.xib; sourceTree = "<group>"; };
+		B3C9B87821FF340800C2FBD9 /* MAODetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAODetailViewController.swift; sourceTree = "<group>"; };
+		B3C9B87921FF340800C2FBD9 /* MAODetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MAODetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +166,8 @@
 		B3C9B84C21FB5E8100C2FBD9 /* Initial */ = {
 			isa = PBXGroup;
 			children = (
-				B3C9B84F21FB5F0000C2FBD9 /* MAODetailViewController.swift */,
-				B3C9B85021FB5F0000C2FBD9 /* MAODetailViewController.xib */,
+				B3C9B84F21FB5F0000C2FBD9 /* MAOInitialViewController.swift */,
+				B3C9B85021FB5F0000C2FBD9 /* MAOInitialViewController.xib */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -182,6 +186,8 @@
 		B3C9B84E21FB5EB000C2FBD9 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B3C9B87821FF340800C2FBD9 /* MAODetailViewController.swift */,
+				B3C9B87921FF340800C2FBD9 /* MAODetailViewController.xib */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -299,7 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3C9B82521FB507600C2FBD9 /* LaunchScreen.storyboard in Resources */,
-				B3C9B85221FB5F0000C2FBD9 /* MAODetailViewController.xib in Resources */,
+				B3C9B87B21FF340800C2FBD9 /* MAODetailViewController.xib in Resources */,
+				B3C9B85221FB5F0000C2FBD9 /* MAOInitialViewController.xib in Resources */,
 				B3C9B86D21FB8CF000C2FBD9 /* MAOListViewController.xib in Resources */,
 				B3C9B82221FB507600C2FBD9 /* Assets.xcassets in Resources */,
 				B3C9B87121FB8F3000C2FBD9 /* MAOListTableViewCell.xib in Resources */,
@@ -333,7 +340,8 @@
 				B3C9B81D21FB507500C2FBD9 /* ViewController.swift in Sources */,
 				B3C9B81B21FB507500C2FBD9 /* AppDelegate.swift in Sources */,
 				B3C9B87021FB8F3000C2FBD9 /* MAOListTableViewCell.swift in Sources */,
-				B3C9B85121FB5F0000C2FBD9 /* MAODetailViewController.swift in Sources */,
+				B3C9B85121FB5F0000C2FBD9 /* MAOInitialViewController.swift in Sources */,
+				B3C9B87A21FF340800C2FBD9 /* MAODetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
