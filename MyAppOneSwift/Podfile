@@ -6,6 +6,8 @@ target 'MyAppOneSwift' do
   use_frameworks!
 
   # Pods for MyAppOneSwift
+  pod 'RGNetworking', :path => "../RGNetworking"
+  pod 'ProgressHUD', :git => "https://github.com/relatedcode/ProgressHUD.git"
 
   target 'MyAppOneSwiftTests' do
     inherit! :search_paths

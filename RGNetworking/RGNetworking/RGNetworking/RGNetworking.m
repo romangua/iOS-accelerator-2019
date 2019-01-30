@@ -1,13 +1,20 @@
+#import <Foundation/Foundation.h>
 #import "RGNetworking.h"
 
-@interface RGNetworking() {
-}
-@end
-
 @implementation RGNetworking
-
-+ (void)show {
-    NSLog(@"asd");
+    
++(void) fetchDataFromUrl:(NSURL *)url success:(void (^)(NSData *))onSuccess error:(void (^)(NSError *))onError {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+        [[defaultSession dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if(!error) {
+                onSuccess(data);
+            } else {
+                onError(error);
+            }
+        }] resume];
+    });
 }
-
+    
 @end

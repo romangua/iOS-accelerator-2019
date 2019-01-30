@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RGNetworking
+import ProgressHUD
 
 class MAOInitialViewController: UIViewController {
 
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var resultIcon: UIImageView!
     var arrayModels: Array<MAOListViewControllerModel> = []
     
@@ -26,7 +27,6 @@ class MAOInitialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicator.hidesWhenStopped = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,21 +40,25 @@ class MAOInitialViewController: UIViewController {
     }
 
     @IBAction func onClickSelection(_ sender: UIButton) {
-        self.activityIndicator.startAnimating()
-        MARequestService.fetchData(url: "https://itunes.apple.com/search?term=jack+johnson", success: {(data) in
-            self.activityIndicator.stopAnimating()
-            if let data = try? JSONDecoder().decode(Result.self, from: data!) {
-                self.resultIcon.image = UIImage.init(named: "okIcon")
-                self.arrayModels = data.results
-            } else {
-                self.showDialog(title: "Error", message: "Se produjo un error al procesar los datos")
-                self.resultIcon.image = UIImage.init(named: "errorIcon")
+        ProgressHUD.show()
+        
+        RGNetworking.fetchData(from: URL.init(string: "https://itunes.apple.com/search?term=jack+johnson"), success: { (data) in
+            DispatchQueue.main.async {
+                if let data = try? JSONDecoder().decode(Result.self, from: data!) {
+                    ProgressHUD.showSuccess()
+                    self.resultIcon.image = UIImage.init(named: "okIcon")
+                    self.arrayModels = data.results
+                } else {
+                    ProgressHUD.showError("Se produjo un error al procesar los datos")
+                    self.resultIcon.image = UIImage.init(named: "errorIcon")
+                }
             }
         }) {(error) in
-            self.activityIndicator.stopAnimating()
-            self.resultIcon.image = UIImage.init(named: "errorIcon")
-            print("Error al obtener los datos: \(error.localizedDescription)")
-            self.showDialog(title: "Error", message: "Se produjo un error al obtener los datos")
+            DispatchQueue.main.async {
+                self.resultIcon.image = UIImage.init(named: "errorIcon")
+                print("Error al obtener los datos: \(error!.localizedDescription)")
+                ProgressHUD.showError("Se produjo un error al obtener los datos")
+            }
         }
     }
     

@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MAOInitialViewController" customModule="MyAppOneSwift" customModuleProvider="target">
             <connections>
-                <outlet property="activityIndicator" destination="mfG-u8-ZMY" id="W5h-s7-ZKX"/>
                 <outlet property="resultIcon" destination="bAb-Tj-sK2" id="iIN-Cz-zf6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,12 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mfG-u8-ZMY">
-                    <rect key="frame" x="214" y="220" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="9sH-rk-fEN"/>
-                    </constraints>
-                </activityIndicatorView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzN-sG-veC">
                     <rect key="frame" x="33" y="345" width="87" height="30"/>
                     <state key="normal" title="Mostrar ASC"/>
@@ -100,14 +93,11 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="efo-UA-D16" secondAttribute="trailing" constant="16" id="RaX-gA-Ora"/>
                 <constraint firstItem="aQi-ta-5NK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="111" id="TZN-fe-DCN"/>
                 <constraint firstItem="6TU-sF-ElS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="33" id="UBg-3P-jCh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mfG-u8-ZMY" secondAttribute="trailing" constant="86" id="XRy-oE-IPG"/>
                 <constraint firstItem="6TU-sF-ElS" firstAttribute="top" secondItem="jzN-sG-veC" secondAttribute="bottom" constant="8" id="Z9p-n5-q7n"/>
                 <constraint firstItem="efo-UA-D16" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="87" id="cb4-VQ-FEn"/>
                 <constraint firstItem="ETE-EJ-epc" firstAttribute="top" secondItem="bAb-Tj-sK2" secondAttribute="bottom" constant="29" id="hId-zo-hgc"/>
-                <constraint firstItem="mfG-u8-ZMY" firstAttribute="leading" secondItem="aQi-ta-5NK" secondAttribute="trailing" constant="14" id="jsK-uP-Jwn"/>
                 <constraint firstItem="jzN-sG-veC" firstAttribute="top" secondItem="JoD-bm-WN8" secondAttribute="bottom" constant="18" id="kdY-ml-PQE"/>
                 <constraint firstItem="bAb-Tj-sK2" firstAttribute="top" secondItem="aQi-ta-5NK" secondAttribute="bottom" constant="2" id="l7W-uc-LwT"/>
-                <constraint firstItem="mfG-u8-ZMY" firstAttribute="centerY" secondItem="aQi-ta-5NK" secondAttribute="centerY" id="mW2-3p-tcu"/>
                 <constraint firstItem="aQi-ta-5NK" firstAttribute="top" secondItem="efo-UA-D16" secondAttribute="bottom" constant="76" id="pLm-kH-8QF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ETE-EJ-epc" secondAttribute="trailing" constant="33" id="pTS-Zf-Ep3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ift-aR-lPe" secondAttribute="trailing" constant="33" id="sxe-Tl-ujA"/>
