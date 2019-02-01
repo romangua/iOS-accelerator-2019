@@ -1,16 +1,16 @@
 PODS:
   - ProgressHUD (2.60)
-  - RGNetworking (0.0.1)
+  - RGBankAccountLib (0.0.1)
 
 DEPENDENCIES:
   - ProgressHUD (from `https://github.com/relatedcode/ProgressHUD.git`)
-  - RGNetworking (from `../RGNetworking`)
+  - RGBankAccountLib (from `../RGBankAccountLib`)
 
 EXTERNAL SOURCES:
   ProgressHUD:
     :git: https://github.com/relatedcode/ProgressHUD.git
-  RGNetworking:
-    :path: "../RGNetworking"
+  RGBankAccountLib:
+    :path: "../RGBankAccountLib"
 
 CHECKOUT OPTIONS:
   ProgressHUD:
@@ -19,8 +19,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ProgressHUD: 4e4efbaf4f5de8bd32e0c4c3b6644a90ea1a8c3e
-  RGNetworking: d88696c307158d28424b87f87cbf3be2e7c36ca0
+  RGBankAccountLib: e71f3acb425fed1d845cbe7676afc3b1926f5571
 
-PODFILE CHECKSUM: f1c50f23a9ab67129688eee691d21a2e9924aa97
+PODFILE CHECKSUM: 77be938eab66a79415ca0b61973a53f26f1559d9
 
 COCOAPODS: 1.5.3

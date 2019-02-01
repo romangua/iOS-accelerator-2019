@@ -8,6 +8,7 @@ target 'MyAppOneSwift' do
   # Pods for MyAppOneSwift
   pod 'RGNetworking', :path => "../RGNetworking"
   pod 'ProgressHUD', :git => "https://github.com/relatedcode/ProgressHUD.git"
+  pod 'MSColorPicker', :git => "https://github.com/EFPrefix/EFColorPicker.git"
 
   target 'MyAppOneSwiftTests' do
     inherit! :search_paths

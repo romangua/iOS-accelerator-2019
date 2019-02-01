@@ -10,6 +10,7 @@ import UIKit
 import RGNetworking
 import ProgressHUD
 
+
 class MAOInitialViewController: UIViewController {
 
     @IBOutlet weak var resultIcon: UIImageView!
