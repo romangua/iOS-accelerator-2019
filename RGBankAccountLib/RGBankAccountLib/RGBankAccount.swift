@@ -9,7 +9,7 @@ import Foundation
 
 @objc public class RGBankAccount : NSObject {
     
-    @objc public func doMovementAccount(value: Float) {
+    @objc public func doMovementAccount(value: Float) -> RGAccount {
         let userDefaults = UserDefaults.standard
         var account: RGAccount = RGAccount(balance: 0.0, movement: [])
         if let decoded = userDefaults.object(forKey: "account") as? Data {
@@ -22,6 +22,8 @@ import Foundation
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: account)
         userDefaults.set(encodedData, forKey: "account")
         userDefaults.synchronize()
+        
+        return account
     }
     
     @objc public func clearAccount() -> Bool {

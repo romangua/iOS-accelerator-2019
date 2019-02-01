@@ -9,8 +9,8 @@
 import UIKit
 
 @objc public class RGMovement: NSObject, NSCoding {
-    var value: Float
-    var date: Date
+    @objc public var value: Float
+    @objc public var date: Date
     
     init(value: Float, date: Date) {
         self.value = value

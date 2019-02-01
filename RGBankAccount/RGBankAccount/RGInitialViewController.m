@@ -9,11 +9,13 @@
 #import "RGInitialViewController.h"
 #import <RGBankAccountLib/RGBankAccountLib-Swift.h>
 #import "ProgressHUD.h"
+#import "RGMovementViewController.h"
 
 @interface RGInitialViewController ()
     @property (weak, nonatomic) IBOutlet UITextField *txtAmount;
     @property (weak, nonatomic) IBOutlet UILabel *lblAmount;
-    @property RGBankAccount *account;
+    @property RGBankAccount *bankAccount;
+    @property RGAccount *account;
 @end
 
 @implementation RGInitialViewController
@@ -21,8 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Cuenta Bancaria";
-    //_account = [[RGBankAccount alloc] ge];
-
+    _bankAccount = [[RGBankAccount alloc] init];
+    _account = [_bankAccount getAccount];
+    [self refreshBalance];
     
     UIBarButtonItem *moreButtom = [[UIBarButtonItem alloc] initWithTitle:@"Mas" style:UIBarButtonItemStylePlain target:self action:@selector(showOption)];
     self.navigationItem.rightBarButtonItem = moreButtom;
@@ -37,16 +40,20 @@
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Movimientos detallados" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        RGMovementViewController *listView = [[RGMovementViewController alloc] initWithModel:[self.account movement]];
+        [self.navigationController pushViewController:listView animated:YES];
         [self dismissViewControllerAnimated:YES completion:^{}];
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Editar colores" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [ProgressHUD showError:@"Función no implementada"];
         [self dismissViewControllerAnimated:YES completion:^{}];
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Eliminar cuenta" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-        if([self.account clearAccount]) {
+        if([self.bankAccount clearAccount]) {
             [ProgressHUD showSuccess:@"Cuenta eliminada con éxito"];
+            self.account = [self.bankAccount getAccount];
             [self refreshBalance];
         } else {
             [ProgressHUD showError:@"Ocurrió un error"];
@@ -62,13 +69,14 @@
     if([valueString length] == 0) {
         [ProgressHUD showError:@"Primero debes ingresar un valor"];
     } else {
-        [_account doMovementAccountWithValue: [self.txtAmount.text floatValue]];
+        _account = [_bankAccount doMovementAccountWithValue: [self.txtAmount.text floatValue]];
         [self refreshBalance];
+        self.txtAmount.text = nil;
     }
 }
 
 - (void) refreshBalance {
-    self.lblAmount.text = [NSString stringWithFormat:@"$%.02f",[_account getAccountBalance]];
+    self.lblAmount.text = [NSString stringWithFormat:@"$%.02f", [_account balance]];
 }
 
 @end

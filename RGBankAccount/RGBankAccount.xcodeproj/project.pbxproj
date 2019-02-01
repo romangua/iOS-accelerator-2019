@@ -17,6 +17,8 @@
 		B317174E22038A5700607B1D /* RGInitialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B317174C22038A5700607B1D /* RGInitialViewController.xib */; };
 		B317175022038B8200607B1D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B317174F22038B8200607B1D /* main.m */; };
 		B317175222038BED00607B1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B317175122038BED00607B1D /* LaunchScreen.storyboard */; };
+		B39A5EE02204E44700DEE322 /* RGMovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */; };
+		B39A5EE12204E44700DEE322 /* RGMovementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */; };
 		D32C58C2B67F218E0F4755B2 /* Pods_RGBankAccountTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B723D85C906C5484859B4E80 /* Pods_RGBankAccountTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,9 @@
 		B317174C22038A5700607B1D /* RGInitialViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RGInitialViewController.xib; sourceTree = "<group>"; };
 		B317174F22038B8200607B1D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B317175122038BED00607B1D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B39A5EDD2204E44700DEE322 /* RGMovementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGMovementViewController.h; sourceTree = "<group>"; };
+		B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGMovementViewController.m; sourceTree = "<group>"; };
+		B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RGMovementViewController.xib; sourceTree = "<group>"; };
 		B723D85C906C5484859B4E80 /* Pods_RGBankAccountTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RGBankAccountTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -140,6 +145,9 @@
 				B317174B22038A5700607B1D /* RGInitialViewController.m */,
 				B317174F22038B8200607B1D /* main.m */,
 				B317174C22038A5700607B1D /* RGInitialViewController.xib */,
+				B39A5EDD2204E44700DEE322 /* RGMovementViewController.h */,
+				B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */,
+				B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */,
 			);
 			path = RGBankAccount;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39A5EE12204E44700DEE322 /* RGMovementViewController.xib in Resources */,
 				B317175222038BED00607B1D /* LaunchScreen.storyboard in Resources */,
 				B317174E22038A5700607B1D /* RGInitialViewController.xib in Resources */,
 				B317171D220389AE00607B1D /* Assets.xcassets in Resources */,
@@ -399,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39A5EE02204E44700DEE322 /* RGMovementViewController.m in Sources */,
 				B317174D22038A5700607B1D /* RGInitialViewController.m in Sources */,
 				B317175022038B8200607B1D /* main.m in Sources */,
 				B3171715220389AD00607B1D /* AppDelegate.m in Sources */,

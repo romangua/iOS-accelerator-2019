@@ -9,8 +9,8 @@
 import UIKit
 
 @objc public class RGAccount: NSObject, NSCoding {
-    var balance: Float = 0.0
-    var movement: [RGMovement]
+    @objc public var balance: Float = 0.0
+    @objc public var movement: [RGMovement]
     
     init(balance: Float, movement: [RGMovement]) {
         self.balance = balance
