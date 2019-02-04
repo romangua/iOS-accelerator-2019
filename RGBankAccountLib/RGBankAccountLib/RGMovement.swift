@@ -9,6 +9,7 @@
 import UIKit
 
 @objc public class RGMovement: NSObject, NSCoding {
+    
     @objc public var value: Float
     @objc public var date: Date
     

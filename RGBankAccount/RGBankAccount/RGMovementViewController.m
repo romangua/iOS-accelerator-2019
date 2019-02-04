@@ -42,6 +42,10 @@
     RGMovement *movement = [_arrayModels objectAtIndex:[indexPath row]];
     cell.textLabel.text = [NSString stringWithFormat:@"$%.02f",[movement value]];
     
+    if([movement value] < 0) {
+        [cell.textLabel setTextColor:[UIColor redColor]];
+    }
+    
     return cell;
 }
 
