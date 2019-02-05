@@ -19,6 +19,8 @@
 		B317175222038BED00607B1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B317175122038BED00607B1D /* LaunchScreen.storyboard */; };
 		B39A5EE02204E44700DEE322 /* RGMovementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */; };
 		B39A5EE12204E44700DEE322 /* RGMovementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */; };
+		B39A5F082209C1EB00DEE322 /* RGColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B39A5F062209C1EB00DEE322 /* RGColorPickerViewController.m */; };
+		B39A5F092209C1EB00DEE322 /* RGColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B39A5F072209C1EB00DEE322 /* RGColorPickerViewController.xib */; };
 		D32C58C2B67F218E0F4755B2 /* Pods_RGBankAccountTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B723D85C906C5484859B4E80 /* Pods_RGBankAccountTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,9 @@
 		B39A5EDD2204E44700DEE322 /* RGMovementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGMovementViewController.h; sourceTree = "<group>"; };
 		B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGMovementViewController.m; sourceTree = "<group>"; };
 		B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RGMovementViewController.xib; sourceTree = "<group>"; };
+		B39A5F052209C1EB00DEE322 /* RGColorPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RGColorPickerViewController.h; sourceTree = "<group>"; };
+		B39A5F062209C1EB00DEE322 /* RGColorPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RGColorPickerViewController.m; sourceTree = "<group>"; };
+		B39A5F072209C1EB00DEE322 /* RGColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RGColorPickerViewController.xib; sourceTree = "<group>"; };
 		B723D85C906C5484859B4E80 /* Pods_RGBankAccountTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RGBankAccountTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +153,9 @@
 				B39A5EDD2204E44700DEE322 /* RGMovementViewController.h */,
 				B39A5EDE2204E44700DEE322 /* RGMovementViewController.m */,
 				B39A5EDF2204E44700DEE322 /* RGMovementViewController.xib */,
+				B39A5F052209C1EB00DEE322 /* RGColorPickerViewController.h */,
+				B39A5F062209C1EB00DEE322 /* RGColorPickerViewController.m */,
+				B39A5F072209C1EB00DEE322 /* RGColorPickerViewController.xib */,
 			);
 			path = RGBankAccount;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B39A5F092209C1EB00DEE322 /* RGColorPickerViewController.xib in Resources */,
 				B39A5EE12204E44700DEE322 /* RGMovementViewController.xib in Resources */,
 				B317175222038BED00607B1D /* LaunchScreen.storyboard in Resources */,
 				B317174E22038A5700607B1D /* RGInitialViewController.xib in Resources */,
@@ -322,6 +331,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RGBankAccount/Pods-RGBankAccount-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/RGBankAccountLib/RGBankAccountLib.framework",
+				"${BUILT_PRODUCTS_DIR}/iOS-Color-Picker/iOS_Color_Picker.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -329,6 +339,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RGBankAccountLib.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOS_Color_Picker.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -409,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B39A5EE02204E44700DEE322 /* RGMovementViewController.m in Sources */,
+				B39A5F082209C1EB00DEE322 /* RGColorPickerViewController.m in Sources */,
 				B317174D22038A5700607B1D /* RGInitialViewController.m in Sources */,
 				B317175022038B8200607B1D /* main.m in Sources */,
 				B3171715220389AD00607B1D /* AppDelegate.m in Sources */,

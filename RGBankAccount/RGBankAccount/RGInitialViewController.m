@@ -10,6 +10,8 @@
 #import <RGBankAccountLib/RGBankAccountLib-Swift.h>
 #import "ProgressHUD.h"
 #import "RGMovementViewController.h"
+#import "RGColorPickerViewController.h"
+
 
 @interface RGInitialViewController ()
     @property (weak, nonatomic) IBOutlet UITextField *txtAmount;
@@ -46,8 +48,10 @@
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Editar colores" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [ProgressHUD showError:@"Función no implementada"];
-        [self dismissViewControllerAnimated:YES completion:^{}];
+        RGColorPickerViewController *colorPicker = [[RGColorPickerViewController alloc] init];
+        [colorPicker setModalPresentationStyle:UIModalPresentationOverFullScreen];
+        [colorPicker setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:colorPicker animated:YES completion:nil];        
     }]];
     
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Eliminar cuenta" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D688725357A2C7AB826163D20F9081B"
+               BlueprintIdentifier = "55724CE58CBD6F02678855C4C7A6E008"
                BlueprintName = "RGBankAccountLib"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "RGBankAccountLib.framework">

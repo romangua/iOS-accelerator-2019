@@ -8,6 +8,7 @@ target 'RGBankAccount' do
   # Pods for RGBankAccount
   pod 'RGBankAccountLib', :path => "../RGBankAccountLib"
   pod 'ProgressHUD', :git => "https://github.com/relatedcode/ProgressHUD.git"
+  pod 'iOS-Color-Picker'
 
   target 'RGBankAccountTests' do
     inherit! :search_paths
